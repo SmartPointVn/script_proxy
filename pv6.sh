@@ -52,14 +52,15 @@ EOF
 }
 
 upload_proxy() {
-    local PASS=$(random)
-    zip --password $PASS proxy.zip proxy.txt
-    URL=$(curl -s --upload-file proxy.zip https://transfer.sh/proxy.zip)
+    # local PASS=$(random)
+    # zip --password $PASS proxy.zip proxy.txt
+    # URL=$(curl -s --upload-file proxy.zip https://transfer.sh/proxy.zip)
 
-    echo "Proxy is ready! Format IP:PORT:LOGIN:PASS"
-    echo "Download zip archive from: ${URL}"
-    echo "Password: ${PASS}"
-
+    # echo "Proxy is ready! Format IP:PORT:LOGIN:PASS"
+    # echo "Download zip archive from: ${URL}"
+    # echo "Password: ${PASS}"
+    echo "Get data at : ${WORKDATA}"
+    echo "Copy data by: cat ${WORKDATA}"
 }
 gen_data() {
     seq $FIRST_PORT $((LAST_PORT-1)) | while read port; do
